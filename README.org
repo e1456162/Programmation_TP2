@@ -39,8 +39,18 @@ Magikarp,20,10,55,15,20,80
 #+end_src
 
 ** Protips
-git switch (id de la issue branch pour travailler)
-(écrire le stuff)
-git add .
-git commit
-git push
+*** Localement
++ git switch (id de la issue branch pour travailler : exercice-1 ou exercice-2)
++ (écrire le stuff)
++ git add .
++ git commit
++ git push
+
+*** Sur le front-end web
++ pull requests
++ new pull request
++ (id de la branche à merge)
++ ajouter dans la description du pull "Closes issue #1 ou #2"
++ sélectionner merge pull request
++ ???
++ profit
