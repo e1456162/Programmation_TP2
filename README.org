@@ -20,9 +20,11 @@ DEADLINE: <2024-05-20 Mon>
 2) écrit ces nombres complexes dans un fichier CSV (comma-separated-vector) sous la forme suivante :
    + reel,imaginaire
    + example:
+    #+begin_src csv
      2,3
      3,2
      1.0,-5.3
+    #+end_src
 
 *** Exercice 2
 À partir d'un fichier CSV contenant sur chaque ligne :
