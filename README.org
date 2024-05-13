@@ -2,7 +2,8 @@
 #+author: e1456162
 #+date: <2024 May 13 Mon>
 
-* Travail Pratique 2
+* TODO Travail Pratique 2
+DEADLINE: <2024-05-20 Mon>
 ** Consignes
 1) Un exercice à remettre par membre de l'équipe sur le repo
 2) Remettre l'url du repo au prof via Léa à la fin
