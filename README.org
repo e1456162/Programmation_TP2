@@ -1,0 +1,46 @@
+#+title: Readme
+#+author: e1456162
+#+date: <2024 May 13 Mon>
+
+* Travail Pratique 2
+** Consignes
+1) Un exercice à remettre par membre de l'équipe sur le repo
+2) Remettre l'url du repo au prof via Léa à la fin
+   1) Vérifier la validité de l'url avant la remise
+
+** Choses à faire
+*** Exercice 1
+Écrire un programme qui :
+1) lit un fichier json (data.json), qui contient des nombres complexes en tuples
+   + exemple de fichier json:
+        #+begin_src json
+        [[2, 3], [3, 2], [1.0, -5.3]]
+        #+end_src
+2) écrit ces nombres complexes dans un fichier CSV (comma-separated-vector) sous la forme suivante :
+   + reel,imaginaire
+   + example:
+     2,3
+     3,2
+     1.0,-5.3
+
+*** Exercice 2
+À partir d'un fichier CSV contenant sur chaque ligne :
+ + Le nom d'un pokemon
+ + Ses attributs
+Écrire une fonction qui lit le fichier et retourne les valeurs sous la forme d'un dictionnaire :
+ + {clé(str):valeur(list [int])}
+où la clé est le nom du Pokémon et la valeur est une liste d'entiers contenant les stats.
+
+Le fichier CSV de tests ressemblera à ceci :
+#+begin_src csv
+Pikachu,35,55,30,50,40,90
+Charizard,78,84,78,109.85,100
+Magikarp,20,10,55,15,20,80
+#+end_src
+
+** Protips
+git switch (id de la issue branch pour travailler)
+(écrire le stuff)
+git add .
+git commit
+git push
