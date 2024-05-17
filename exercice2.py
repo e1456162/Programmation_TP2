@@ -9,14 +9,18 @@ résumé du programme:
 programme qui lit in fichier csv et retourne ses valeurs en tant qu'entrées dans un dictionnaire
 """
 
-def lectureFichier(fichier:str)->dict:
+def fichierVersDict(fichier:str)->dict:
+    #===== Variables de travail =====#
     dictionnaire:dict = {}
     temp:list = []
+    #===== Traitement sur le fichier =====#
     with open(fichier, "r") as f:
         lignes:list = f.readlines()
-    for item in lignes:
-        temp = (item.replace("\n","").split(","))
-        dictionnaire.update({temp[0]:temp[1::]})
-        print(dictionnaire)
+    for chaineCaracteres in lignes:
+        temp = (chaineCaracteres.replace("\n","").split(",")) # Conversion chaine de caractères vers liste
+        for i in range(1,len(temp)):
+            temp[i] = float(temp[i]) # Conversion string vers float des entrées numériques
+        dictionnaire.update({temp[0]:temp[1::]}) # Création du dictionnaire {Pokemon:[stats]}
+    return dictionnaire
 
-lectureFichier("./pokemons.csv")
+print(fichierVersDict("./pokemons.csv")) #affichage du return de la fonction en tant que test
