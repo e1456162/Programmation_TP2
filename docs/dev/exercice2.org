@@ -1,0 +1,58 @@
+#+title: Exercice2
+#+author: e1456162
+#+date: < 2024 May 17 Fri >
+
+* Exercice 2
+À partir d'un fichier CSV contenant sur chaque ligne :
+ + Le nom d'un pokemon
+ + Ses attributs
+Écrire une fonction qui lit le fichier et retourne les valeurs sous la forme d'un dictionnaire :
+ + {clé(str):valeur(list [int])}
+où la clé est le nom du Pokémon et la valeur est une liste d'entiers contenant les stats.
+
+Le fichier CSV de tests ressemblera à ceci :
+#+begin_src csv :tangle ../../pokemons.csv
+Pikachu,35,55,30,50,40,90
+Charizard,78,84,78,109.85,100
+Magikarp,20,10,55,15,20,80
+#+end_src
+
+** Programme
+*** En-tête
+#+begin_src python :tangle ../../exercice2.py :results output
+"""
+exercice2.py
+
+auteur: Cédric Vincent (e1456162)
+date de création: < 2024 May 17 Fri >
+environnement de développement GNU/Emacs
+
+résumé du programme:
+programme qui lit in fichier csv et retourne ses valeurs en tant qu'entrées dans un dictionnaire
+"""
+#+end_src
+
+*** Définitions de fonctions
+#+begin_src python :tangle ../../exercice2.py :results output
+
+def fichierVersDict(fichier:str)->dict:
+    #===== Variables de travail =====#
+    dictionnaire:dict = {}
+    temp:list = []
+    #===== Traitement sur le fichier =====#
+    with open(fichier, "r") as f:
+        lignes:list = f.readlines()
+    for chaineCaracteres in lignes:
+        temp = (chaineCaracteres.replace("\n","").split(",")) # Conversion chaine de caractères vers liste
+        for i in range(1,len(temp)):
+            temp[i] = float(temp[i]) # Conversion string vers float des entrées numériques
+        dictionnaire.update({temp[0]:temp[1::]}) # Création du dictionnaire {Pokemon:[stats]}
+    return dictionnaire
+
+
+#+end_src
+
+*** Programme principal
+#+begin_src python :tangle ../../exercice2.py :results output
+print(fichierVersDict("./pokemons.csv")) #affichage du return de la fonction en tant que test
+#+end_src
